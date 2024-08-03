@@ -10,7 +10,7 @@
         <hr/>
 
         <!-- Escaping Data -->
-        <p>Escaping Data: <?= e($dangerousData); ?></p>
+        <p>Escaping Data: </p>
     </section>
     <!-- End Main Content Area -->
 
