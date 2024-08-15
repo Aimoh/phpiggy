@@ -30,9 +30,10 @@
                         name="country"
                         class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 >
-                    <option value="USA">USA</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
                     <option value="Canada">Canada</option>
                     <option value="Mexico">Mexico</option>
+                    <option value="USA">USA</option>
                     <option value="Invalid">Invalid Country</option>
                 </select>
             </label>
