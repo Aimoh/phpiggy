@@ -2,7 +2,9 @@
     "name": "bakht/php_framework_udemy",
     "description": "A PHP application for tracking expenses.",
     "type": "project",
-    "require": {},
+    "require": {
+      "ext-pdo": "*"
+    },
     "autoload": {
         "psr-4": {
             "Framework\\": "src/Framework",
@@ -12,5 +14,8 @@
             "src/App/Config/Routes.php",
             "src/App/Config/Middleware.php"
         ]
+    },
+    "scripts": {
+        "phpiggy": "php cli.php"
     }
 }
