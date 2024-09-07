@@ -23,7 +23,7 @@ class ValidatorService
         $this->validator->add('match', new MatchRule());
     }
 
-    public function validateRegister(array $formData)
+    public function validateRegister(array $formData): void
     {
         $this->validator->validate($formData, [
             'email' => ['required', 'email'],
@@ -33,6 +33,14 @@ class ValidatorService
             'password' => ['required'],
             'confirmPassword' => ['required', 'match:password'],
             'tos' => ['required']
+        ]);
+    }
+
+    public function validateLogin(array $formData): void
+    {
+        $this->validator->validate($formData, [
+            'email' => ['required', 'email'],
+            'password' => ['required']
         ]);
     }
 }

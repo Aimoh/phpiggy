@@ -10,7 +10,7 @@ use Framework\Exceptions\ValidationException;
 class ValidationExceptionMiddleware implements MiddlewareInterface
 {
 
-    public function process(callable $next)
+    public function process(callable $next): void
     {
         try {
             $next();

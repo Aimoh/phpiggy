@@ -6,24 +6,22 @@ namespace App\Middleware;
 
 use Framework\Contracts\MiddlewareInterface;
 use Framework\TemplateEngine;
+use Random\RandomException;
 
-class FlashMiddleware implements MiddlewareInterface
+class CsrfTokenMiddleware implements MiddlewareInterface
 {
     public function __construct(private TemplateEngine $view)
     {
-
     }
 
-
+    /**
+     * @throws RandomException
+     */
     public function process(callable $next): void
     {
-        $this->view->addGlobal('errors', $_SESSION['errors'] ?? []);
+        $_SESSION['token'] = $_SESSION['token'] ?? bin2hex(random_bytes(32));
 
-        unset($_SESSION['errors']);
-
-        $this->view->addGlobal('oldFormData', $_SESSION['oldFormData'] ?? []);
-
-        unset($_SESSION['oldFormData']);
+        $this->view->addGlobal('csrfToken', $_SESSION['token']);
 
         $next();
     }
